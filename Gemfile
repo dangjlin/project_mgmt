@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5'
 
 gem 'devise'
+gem 'milia'
+gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'bcrypt', '~> 3.1.7'
@@ -58,3 +60,6 @@ group :production do
   gem 'rails_12factor'
 end
 
+
+gem 'recaptcha', require: 'recaptcha/rails'
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
