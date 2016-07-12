@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     if current_user
-      if sessions[:tenant_id]
+      if session[:tenant_id]
         Tenant.set_current_tenant session[:tenant_id]
       else
         Tenant.set_current_tenant current_user.tenants.first
