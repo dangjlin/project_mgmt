@@ -6,11 +6,8 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.find.all
-    
-    
-  end
-  end
+    @projects = Project.all
+  end 
 
   # GET /projects/1
   # GET /projects/1.json
@@ -79,5 +76,6 @@ class ProjectsController < ApplicationController
     def verify_tenant
       unless params[:tenant_id] == Tenant.current_tenant_id.to_s
       redirect_to :root, flash: { error: "You are not authorized to access any organization other than your own"}
+      end
     end
 end
