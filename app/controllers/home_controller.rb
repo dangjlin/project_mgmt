@@ -9,9 +9,15 @@ class HomeController < ApplicationController
         Tenant.set_current_tenant current_user.tenants.first
       end
       
-      @tenant = Tenant.current_user
-      params[:tenant_id] = @tenant.id 
+      @tenant = Tenant.current_tenant
+      @projects = Project.by_plan_and_tenant(@tenant.id)
       
+      params[:tenant_id] = @tenant.id
+    
+    else 
+      flash[:warning] = "Please signup an account or login"
     end
+    
+    
   end
 end

@@ -1,7 +1,7 @@
 class ConfirmationsController < Milia::ConfirmationsController
   
   def update
-    if @confirmable.attempt_set_password(user_params)
+  if @confirmable.attempt_set_password(user_params)
 
       # this section is patterned off of devise 3.2.5 confirmations_controller#show
 
@@ -33,7 +33,7 @@ class ConfirmationsController < Milia::ConfirmationsController
        @confirmable.skip_confirm_change_password
 
       log_action( "devise pass-thru" )
-      self.resource = resource_class.confirm_by_token(params:[:confirmation_token])
+      self.resource = resource_class.confirm_by_token(params[:confirmation_token])
       yield resource if block_given?
 
       if resource.errors.empty?
