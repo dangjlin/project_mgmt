@@ -20,6 +20,7 @@ class Project < ActiveRecord::Base
         tenant.projects
       else
         user.projects.where(tenant_id: tenant.id)
+      end
     else
       if user.is_admin?
         tenant.projects.order(:id).limit(1)
