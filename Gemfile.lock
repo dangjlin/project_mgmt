@@ -48,6 +48,11 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    awesome_print (1.7.0)
+    awesome_rails_console (0.4.0)
+      awesome_print
+      pry-rails
+      railties
     aws-sdk (2.3.22)
       aws-sdk-resources (= 2.3.22)
     aws-sdk-core (2.3.22)
@@ -61,6 +66,7 @@ GEM
       railties (>= 3.0)
     builder (3.2.2)
     byebug (9.0.5)
+    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -85,6 +91,10 @@ GEM
     execjs (2.7.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -109,6 +119,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
     milia (1.2.0)
       devise (~> 3.4)
       rails (~> 4.2)
@@ -125,6 +136,18 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
+      pry (~> 0.10)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
+    pry-stack_explorer (0.4.9.2)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -179,6 +202,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     spring (1.7.2)
     sprockets (3.6.3)
       concurrent-ruby (~> 1.0)
@@ -208,6 +232,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+    unicode-display_width (0.1.1)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -221,6 +246,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-session_store!
+  awesome_rails_console
   aws-sdk (~> 2)
   bcrypt (~> 3.1.7)
   bootstrap-datepicker-rails
@@ -228,10 +254,14 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-bootstrap-views
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   milia
   pg
+  pry-byebug
+  pry-stack_explorer
   rails (= 4.2.5)
   rails_12factor
   recaptcha
